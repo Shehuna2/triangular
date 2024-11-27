@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arbitrage Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Arbitrage Opportunities</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Path</th>
+                <th>Profit (%)</th>
+                <th>Detected At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for opportunity in opportunities %}
+            <tr>
+                <td>{{ opportunity.path }}</td>
+                <td>{{ opportunity.profit }}</td>
+                <td>{{ opportunity.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
